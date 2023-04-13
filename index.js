@@ -6,7 +6,6 @@ const cors = require('cors')
 const colors = require('colors')
 const route = require('./routes/route');
 const { notFound, errorHandler } = require('./midllewares/errors')
-
 const PORT = process.env.PORT || 3001
 
 // app.use(cors())
@@ -20,7 +19,6 @@ mongoose.connect("mongodb+srv://mohdarshad86:Arshad86@cluster0.r4p7rwf.mongodb.n
   .catch((err) => { console.log(`Error:${err.message}`.red.bold) });
 
 app.use(cors())
-
 
 app.use("/", route);
 
@@ -59,9 +57,9 @@ io.on("connection", (socket) => {
     if (!chat.users) {
       return console.log("chat.users not defined");
     }
-    
+
     chat.users.forEach((user) => {
-      
+
       if (user == newMessageRecieved.sender._id) return;
 
       socket.in(user).emit("message recieved", newMessageRecieved);
