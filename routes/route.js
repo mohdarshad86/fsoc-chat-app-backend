@@ -40,7 +40,7 @@ router.post('/api/user/sendOTP', otp.sendOTP)
 router.post('/api/user/verifyOTP', otp.verifyOTP)
 
 router.all('*', (req, res) => {
-    return res.status(400).send('Invalid URL')
+    return res.status(400).send({ status: false, message: 'Invalid URL' })
 })
 
 module.exports = router
