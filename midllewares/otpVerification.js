@@ -34,7 +34,7 @@ const sendOTP = async (req, res) => {
     // send otp to mobile
 
     // send the OTP to the phone number using your preferred method, such as SMS or email
-    res.status(200).json({ status: true, message: `OTP sent to ${phone}`, otp });
+    res.status(200).json({ status: true, message: `OTP sent to ${phone}, ${otp}` });
   } catch (error) {
 
     return res.status(500).send({ status: false, message: error.message })
