@@ -13,7 +13,7 @@ router.post('/api/user/login', userController.Login)
 //GET ALL USER
 router.get('/api/users', authorise.auth, userController.allUsers)
 //UPDATE USER
-router.put('/api/users', authorise.auth, userController.updateUser)
+router.put('/api/user', authorise.auth, userController.updateUser)
 
 // chat
 //ACCESS CHAT
