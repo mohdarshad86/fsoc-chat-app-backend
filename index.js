@@ -32,7 +32,7 @@ const io = require("socket.io")(server, {
   // path: "https://chatappbackend-uqkv.onrender.com",
   pingTimeout: 60000,
   cors: {
-    origin: "https://venerable-kangaroo-bc0f7c.netlify.app",
+    origin: "https://chat-app-fsoc.netlify.app",
     // credentials: true,
   },
 });
